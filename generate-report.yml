@@ -1,0 +1,6 @@
+# generate-report.yml
+- hosts: lamp_app
+  tasks:
+  - template:
+      src: report.csv.j2
+      dest: /home/vagrant/ansible/report.csv

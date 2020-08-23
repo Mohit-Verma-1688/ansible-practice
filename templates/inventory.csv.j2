@@ -1,0 +1,4 @@
+{% for host in groups['lamp_app'] %}
+
+{{ host }} {{ hostvars[host].ansible_architecture }} , {{ hostvars[host].ansible_distribution_version}}, {{ hostvars[host].ansible_memtotal_mb}} , {{ hostvars[host].ansible_processor_cores}} , {{ hostvars[host].ansible_processor_count}}
+{% endfor %}

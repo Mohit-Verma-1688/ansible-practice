@@ -1,0 +1,14 @@
+
+- hosts: all
+  vars: 
+    person:
+      - name: mohit
+        place: karampura
+      - name: somiya
+        place: dwarka
+      - name: varun
+        place: Narnaul
+  tasks:
+    - name: print person
+      shell: echo "{{ item.name }}" "{{ item.place }}"
+      with_items: "{{ person }}"

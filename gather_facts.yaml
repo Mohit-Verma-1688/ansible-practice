@@ -1,0 +1,6 @@
+
+  - hosts: lamp_app
+    tasks:  
+    - name: Display all variables/facts known for a host
+      debug:
+        var: hostvars['target2']

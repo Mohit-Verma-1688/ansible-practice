@@ -1,0 +1,12 @@
+
+- hosts: all
+  tasks:
+     - name: check vunerability
+       shell: export evil='() { :;}; echo vulnerable |tee /tmp/output'; echo 'not vulnerable' | tee /tmp/output;
+       register: result
+
+     - debug: 
+        var: result
+
+     - shell: echo " this system is ok "
+       when: result.rc == 0

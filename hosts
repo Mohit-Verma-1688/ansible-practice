@@ -1,0 +1,11 @@
+target1 ansible_host=192.168.5.24 ansible_python_interpreter=/usr/bin/python3 ansible_connection=ssh ansible_user=vagrant
+
+[remote_hosts]
+
+target1
+
+[lamp_app]
+
+target2 ansible_host=192.168.5.25 ansible_python_interpreter=/usr/bin/python3 ansible_connection=ssh ansible_user=vagrant monitor_port=8080 protocol=https
+target1 ansible_host=192.168.5.24 
+

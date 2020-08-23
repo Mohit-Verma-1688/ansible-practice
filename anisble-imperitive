@@ -1,0 +1,9 @@
+
+## Gather facts and store in location
+
+ansible all -m setup --tree /tmp/facts
+
+
+## encrypting mypass wth vault to use encrypted value...use variable secret
+
+ ansible-vault encrypt_string 'mypas' --name 'secret' --vault-password-file=/home/vagrant/ansible/mock-test-practice/secret/pass.txt

@@ -1,0 +1,7 @@
+# generate-agent-info.yml
+
+- hosts: lamp_app
+  tasks:
+  - template:
+      src: agents.conf.j2
+      dest: /home/vagrant/ansible/test

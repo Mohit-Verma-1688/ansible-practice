@@ -1,0 +1,18 @@
+- hosts: target1
+  vars:    
+   secret: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          64656432366533393866313035316131656231396337373137333033313363396466636436366163
+          6162633032353938326165636664343466373038323364610a393338633838333463646335646537
+          33313839343663336133383865356637343161356536373939386433343561353338643335313032
+          3639663462343863310a313339653939613931663432383936616165396262326264363863636561
+          6661
+  tasks:
+    - name: print the secure variable
+      debug:
+        var: secret
+
+
+    - name: print the mesage 
+      debug: 
+        msg: "ansible-vault encrypt_string 'mypas' --name 'secret' --vault-password-file=/home/vagrant/ansible/mock-test-practice/secret/pass.txt"

@@ -1,0 +1,16 @@
+
+- hosts: all
+  vars: 
+    color:
+      - red
+      - green
+      - blue
+      - maganta
+      - grey
+      - black
+  tasks:
+    - name: print color
+      shell: echo "{{ item }}"
+      with_items: "{{ color }}"
+      register: test
+    - debug: var=test
